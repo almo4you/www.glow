@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fbf6f8">
+  <meta
+    name="description"
+    content="GlowBook — премиальный мини-лендинг и запись в Telegram для beauty-мастеров. 3 дня бесплатно, далее 490 ₽ в месяц."
+  >
+  <title>GlowBook для мастеров</title>
+  <link rel="preload" as="image" href="./assets/hero-glow-bg.jpg" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Onest:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <svg class="liquid-glass-filter" aria-hidden="true" focusable="false">
+    <filter id="liquid-glass-filter" x="0%" y="0%" width="100%" height="100%">
+      <feImage
+        result="liquid-glass-map"
+        href="data:image/png;base64,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"
+        preserveAspectRatio="none"
+      />
+      <feDisplacementMap
+        in="SourceGraphic"
+        in2="liquid-glass-map"
+        scale="160"
+        xChannelSelector="R"
+        yChannelSelector="G"
+      />
+    </filter>
+  </svg>
+
+  <div class="glow-noise" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand-mark" href="#top" aria-label="Glow">
+      Glow
+    </a>
+
+    <nav class="top-nav" id="site-nav" aria-label="Навигация по лендингу">
+      <a class="nav-item" href="#benefits">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2.8l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8L3.5 9l5.9-.9L12 2.8Z"/>
+        </svg>
+        <span>Функции</span>
+      </a>
+      <a class="nav-item" href="#showcase">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="7" y="2.75" width="10" height="18.5" rx="3.2"/>
+          <path d="M10 6h4"/>
+        </svg>
+        <span>Демо</span>
+      </a>
+      <a class="nav-item" href="#pricing">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5.5 8.2V6.4A2.4 2.4 0 0 1 7.9 4h8.2a2.4 2.4 0 0 1 2.4 2.4v1.8"/>
+          <rect x="4" y="8.2" width="16" height="11.2" rx="2.6"/>
+          <path d="M8 13.8h4.8"/>
+        </svg>
+        <span>Цена</span>
+      </a>
+    </nav>
+
+    <a class="nav-cta nav-cta-icon" href="https://t.me/glowbook_robot" target="_blank" rel="noreferrer" aria-label="Открыть Telegram-бот GlowBook">
+      <svg class="nav-cta-telegram" viewBox="0 0 240 240" aria-hidden="true">
+        <path d="M179.4 74.4c1.8-11.8-4.5-16.3-12.8-13.1L52 105.5c-7.8 3-7.7 7.4-1.4 9.3l29.4 9.2 68.1-42.9c3.2-1.9 6.1-.9 3.7 1.3l-55.2 49.8-2.1 31.4c3.1 0 4.5-1.4 6.2-3l14.9-14.5 31 22.9c5.7 3.1 9.9 1.5 11.3-5.3l21.5-89.3Z"/>
+      </svg>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Открыть меню"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+
+      <div class="hero-copy reveal">
+        <p class="eyebrow">GlowBook for beauty masters</p>
+        <h1>Запись, которая выглядит как сервис.</h1>
+        <p class="hero-text">
+          GlowBook помогает мастеру принимать заявки, показывать услуги, вести портфолио,
+          управлять графиком и получать аккуратно собранные записи без лишней ручной переписки.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://t.me/glowbook_robot" target="_blank" rel="noreferrer">
+            Открыть бота и создать профиль
+          </a>
+          <a class="button button-secondary liquid-glass" href="#benefits">Функции</a>
+        </div>
+
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="hero-orbit" aria-hidden="true"></div>
+
+        <article class="phone-preview" id="phone-preview" aria-label="Пример клиентской витрины">
+          <div class="phone-preview__device">
+            <span class="phone-preview__button phone-preview__button--action"></span>
+            <span class="phone-preview__button phone-preview__button--volume-top"></span>
+            <span class="phone-preview__button phone-preview__button--volume-bottom"></span>
+
+            <div class="phone-preview__bezel">
+              <div class="phone-preview__screen">
+                <span class="phone-preview__island" aria-hidden="true"></span>
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="./assets/hero-app-480.webp 480w, ./assets/hero-app-720.webp 720w"
+                    sizes="(max-width: 820px) 252px, 286px"
+                  >
+                  <img
+                    src="./assets/hero-app.png"
+                    alt="Пример интерфейса клиентской витрины GlowBook"
+                    class="phone-preview__image"
+                    width="1206"
+                    height="2622"
+                    decoding="async"
+                    fetchpriority="high"
+                  >
+                </picture>
+              </div>
+            </div>
+          </div>
+          <div class="floating-note floating-note--top">
+            <span>CRM</span>
+            Профиль, услуги и клиенты
+          </div>
+          <div class="floating-note floating-note--bottom">
+            <span>24/7</span>
+            Запись в свободные слоты
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="benefits-section" id="benefits">
+      <div class="benefits-head reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Что получает мастер</p>
+          <h2>Функции, которые закрывают запись, расписание, клиентов и витрину.</h2>
+        </div>
+
+        <div class="benefits-meta">
+          <div class="benefits-meta__item liquid-glass">
+            <span>6 модулей</span>
+            для ежедневной работы
+          </div>
+          <div class="benefits-meta__item liquid-glass">
+            <span>1 бот</span>
+            без лишних приложений
+          </div>
+        </div>
+      </div>
+
+      <div class="benefits-grid">
+        <article class="benefit-card reveal liquid-glass">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <rect x="4" y="5" width="16" height="15" rx="4"/>
+              <path d="M8 3.5v3M16 3.5v3M8 11.5h8M8 15.5h5"/>
+            </svg>
+          </div>
+          <p class="benefit-number">01</p>
+          <h3>Онлайн-запись по свободным слотам</h3>
+          <p>
+            Клиент сам выбирает услугу, день и время, а мастер получает уже собранную заявку.
+          </p>
+        </article>
+
+        <article class="benefit-card reveal liquid-glass">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 6.5h10M7 12h10M7 17.5h6"/>
+              <rect x="4" y="4" width="16" height="16" rx="4"/>
+            </svg>
+          </div>
+          <p class="benefit-number">02</p>
+          <h3>Каталог услуг с ценой и длительностью</h3>
+          <p>
+            Можно сразу показать все процедуры, стоимость и продолжительность, чтобы не отвечать одно и то же вручную.
+          </p>
+        </article>
+
+        <article class="benefit-card reveal liquid-glass">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <rect x="4" y="5" width="16" height="14" rx="4"/>
+              <path d="m8 16 3-3 2 2 3-4 2 2"/>
+            </svg>
+          </div>
+          <p class="benefit-number">03</p>
+          <h3>Портфолио и рейтинг в профиле</h3>
+          <p>
+            Работы и оценка мастера помогают клиенту быстрее принять решение и записаться.
+          </p>
+        </article>
+
+        <article class="benefit-card reveal liquid-glass">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="8"/>
+              <path d="M12 8v4.6l3.2 2"/>
+            </svg>
+          </div>
+          <p class="benefit-number">04</p>
+          <h3>График, рабочие дни и выходные</h3>
+          <p>
+            Мастер задаёт расписание и паузы, а клиенты видят только доступное время.
+          </p>
+        </article>
+
+        <article class="benefit-card reveal liquid-glass">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M18 9a6 6 0 1 0-12 0c0 7-2 7-2 7h16s-2 0-2-7"/>
+              <path d="M9.8 18a2.2 2.2 0 0 0 4.4 0"/>
+            </svg>
+          </div>
+          <p class="benefit-number">05</p>
+          <h3>Уведомления мастеру и клиенту</h3>
+          <p>
+            Бот сообщает о новой записи, отмене и помогает не потерять важный визит.
+          </p>
+        </article>
+
+        <article class="benefit-card reveal liquid-glass">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="9" cy="10" r="3.5"/>
+              <path d="M3.8 18.2c.8-2.5 2.7-4 5.2-4s4.4 1.5 5.2 4"/>
+              <path d="M15.4 7.5a3 3 0 1 1 0 5.8M16.8 14.6c1.8.4 3 1.7 3.6 3.6"/>
+            </svg>
+          </div>
+          <p class="benefit-number">06</p>
+          <h3>Клиентская база и история визитов</h3>
+          <p>
+            Контакты, записи и статусы клиентов остаются в системе, чтобы удобнее вести повторные визиты.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="showcase-section" id="showcase">
+      <article class="showcase-card reveal liquid-glass">
+        <div class="showcase-copy">
+          <p class="eyebrow">Как это работает</p>
+          <h2>Клиент открывает профиль, выбирает услугу, слот и отправляет заявку без переписки.</h2>
+          <p>
+            А мастер получает запись в Telegram, управляет услугами, портфолио, графиком
+            и подпиской из одного бота.
+          </p>
+
+          <div class="showcase-list">
+            <div class="showcase-item">
+              <span></span>
+              Быстрое создание публичного профиля
+            </div>
+            <div class="showcase-item">
+              <span></span>
+              Управление услугами, фото и расписанием
+            </div>
+            <div class="showcase-item">
+              <span></span>
+              Приём заявок и контроль статусов записей
+            </div>
+          </div>
+        </div>
+
+        <div class="mini-ui liquid-glass" aria-label="Декоративный интерфейс GlowBook">
+          <div class="mini-ui__header">GLOW</div>
+          <div class="mini-profile">
+            <div class="mini-avatar"></div>
+            <div>
+              <h3>Мария</h3>
+              <p>@glow | ✦ 5.0</p>
+            </div>
+          </div>
+          <div class="mini-stats">
+            <div><strong>4</strong><span>Услуг</span></div>
+            <div><strong>2</strong><span>Работ</span></div>
+            <div><strong>Пн-Сб</strong><span>График</span></div>
+          </div>
+          <div class="mini-action">
+            <span>Выбрать услуги и время</span>
+            <button type="button" aria-label="Открыть запись">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 6l6 6-6 6"/>
+              </svg>
+            </button>
+          </div>
+          <div class="mini-gallery">
+            <div class="mini-shot mini-shot--dark"></div>
+            <div class="mini-shot mini-shot--blue"></div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="founder-section" id="founder">
+      <article class="founder-card reveal liquid-glass">
+        <figure class="founder-portrait">
+          <img
+            src="./assets/founder-director.jpeg"
+            alt="Основатель и исполнительный директор Glow"
+            class="founder-portrait__image"
+            width="832"
+            height="1248"
+            loading="eager"
+            decoding="sync"
+            fetchpriority="low"
+          >
+          <figcaption class="founder-portrait__label liquid-glass">
+            <span>Founder note</span>
+            Исполнительный директор Glow
+          </figcaption>
+        </figure>
+
+        <div class="founder-copy">
+          <p class="eyebrow">Несколько слов от основателя</p>
+          <h2>Мы разработали GlowBook для мастеров, которым нужен не просто чат, а аккуратный сервис вокруг их записи.</h2>
+
+          <div class="founder-dialogue">
+            <div class="founder-dialogue__item">
+              <p class="founder-question">Почему вы вообще начали создавать GlowBook?</p>
+              <p class="founder-answer">
+                Мы видели, как сильные мастера теряют время в переписках, а их уровень работы
+                не всегда считывается через обычный чат. Хотелось создать пространство, где
+                забота, порядок и эстетика ощущаются ещё до визита.
+              </p>
+            </div>
+
+            <div class="founder-dialogue__item">
+              <p class="founder-question">Какие принципы для вас были главными?</p>
+              <p class="founder-answer">
+                Уважение к времени мастера и клиента, чистая визуальная подача, понятная запись
+                без хаоса и ощущение доверия на каждом шаге. Поэтому мы собрали профиль, услуги,
+                расписание, портфолио и заявки в один спокойный сценарий.
+              </p>
+            </div>
+          </div>
+
+          <blockquote class="founder-quote">
+            “Для нас премиальность — это не громкие слова, а ощущение, что к мастеру легко
+            записаться, всё ясно по услугам и времени, а каждый экран мягко работает на доверие.”
+          </blockquote>
+        </div>
+      </article>
+    </section>
+
+    <section class="pricing-section" id="pricing">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Тариф</p>
+        <h2>Один понятный план, чтобы просто запустить профиль и принимать записи.</h2>
+      </div>
+
+      <article class="pricing-card reveal liquid-glass">
+        <div class="pricing-main">
+          <div class="pricing-head">
+            <p class="pricing-badge">3 дня бесплатно</p>
+            <p class="pricing-tag">Premium доступ</p>
+          </div>
+
+          <p class="pricing-name">Glow Premium</p>
+          <p class="pricing-value">490 ₽ <span>/ 1 месяц</span></p>
+          <p class="pricing-note">
+            Полный набор инструментов для записи, витрины услуг и клиентской базы.
+            После trial профиль продлевается подпиской, а при паузе бережно хранится 30 дней.
+          </p>
+
+          <div class="pricing-minirow">
+            <div><strong>Без хаоса</strong><span>вся запись в одном сценарии</span></div>
+            <div><strong>Без ручной рутины</strong><span>бот сам собирает заявку и время</span></div>
+          </div>
+
+          <a class="button button-primary pricing-cta" href="https://t.me/glowbook_robot" target="_blank" rel="noreferrer">
+            Создать профиль в Glow
+          </a>
+        </div>
+
+        <div class="pricing-side">
+          <div class="pricing-side__backdrop" aria-hidden="true">
+            <img
+              src="./assets/pricing-glow-bg.png"
+              alt=""
+              class="pricing-side__image"
+              width="710"
+              height="1179"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+
+          <p class="pricing-side__title">Что входит в подписку</p>
+
+          <div class="pricing-includes">
+            <article class="pricing-feature">
+              <p class="pricing-feature__name">Личная витрина мастера</p>
+              <p class="pricing-feature__text">Профиль, услуги, прайс, портфолио и рейтинг в одном Telegram-пространстве.</p>
+            </article>
+
+            <article class="pricing-feature">
+              <p class="pricing-feature__name">Онлайн-запись и расписание</p>
+              <p class="pricing-feature__text">Клиенты выбирают свободный слот, а график и выходные остаются под контролем мастера.</p>
+            </article>
+
+            <article class="pricing-feature">
+              <p class="pricing-feature__name">Уведомления и статусы визитов</p>
+              <p class="pricing-feature__text">Бот сообщает о новых заявках, подтверждениях и отменах, чтобы ничего не терялось.</p>
+            </article>
+
+            <article class="pricing-feature">
+              <p class="pricing-feature__name">Клиентская база</p>
+              <p class="pricing-feature__text">История записей и данные по клиентам аккуратно остаются в системе.</p>
+            </article>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer-shell">
+    <p>GlowBook · мягкая beauty-запись для мастеров</p>
+    <a href="https://t.me/glowbook_robot" target="_blank" rel="noreferrer">t.me/glowbook_robot</a>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
